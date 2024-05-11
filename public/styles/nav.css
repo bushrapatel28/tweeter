@@ -10,7 +10,7 @@ nav {
   align-items: center;
 }
 
-span {
+nav span {
   font-family: "Bungee", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -21,7 +21,6 @@ div {
   font-size: 20px;
 }
 
-i {
-  display: flex;
-  margin-left: 5em;
+#down-arrow {
+  margin-left: 4em;
 }
