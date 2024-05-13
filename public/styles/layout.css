@@ -27,13 +27,7 @@ body {
  */
 
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: content-box;
   width: 90%;
-  padding-left: 5%;
-  padding-right: 5%;
+  margin: 0 auto;
   background-color: inherit;
 }
