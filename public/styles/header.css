@@ -1,12 +1,21 @@
 header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   box-sizing: content-box;
-  padding-top: 140px;
+  padding-top: 80px;
   height: 400px;
   width: 100%;
   background-color: lightskyblue;
   background-image: url("../images/fresh-snow.png");
+}
+
+.my-name {
+  display: flex;
+  box-sizing: border-box;
+  margin-top: -20px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
 }
