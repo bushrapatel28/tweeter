@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#tweet-text {
+  resize: none;
+  height: 30px;
+  border: hidden;
+  background-color: inherit;
+  border-bottom: thick solid black;
+  font-size: large;
+}
+
+.button-counter {
+  padding-top: 20px;
+  display: flex;
+  font-family: "Bungee", sans-serif;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+button {
+  background-color: darkblue;
+  color: white;
+}
