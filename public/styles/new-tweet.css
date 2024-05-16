@@ -6,8 +6,9 @@ form {
 
 #tweet-text {
   resize: none;
-  height: 30px;
-  border: hidden;
+  height: auto;
+  outline: none;
+  border: none;
   background-color: inherit;
   border-bottom: thick solid black;
   font-size: large;
@@ -19,6 +20,10 @@ form {
   font-family: "Bungee", sans-serif;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.negative {
+  color: red;
 }
 
 button {
