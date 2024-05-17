@@ -4,6 +4,14 @@ form {
   justify-content: center;
 }
 
+.new-tweet h2 {
+  font-size: larger;
+}
+
+form label {
+  font-size: large;
+}
+
 #tweet-text {
   resize: none;
   height: auto;
@@ -17,9 +25,10 @@ form {
 .button-counter {
   padding-top: 20px;
   display: flex;
-  font-family: "Bungee", sans-serif;
   justify-content: space-between;
   align-items: flex-end;
+  font-family: "Bungee", sans-serif;
+  font-size: large;
 }
 
 .negative {
