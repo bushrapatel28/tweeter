@@ -4,6 +4,21 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
+  //Form 'submit' Event Handler
+  $('form').on('submit', function(event) {
+    alert( "Handler for `submit` called." );
+    //Prevent the default form submission behaviour
+    event.preventDefault();
+    //Convert (serialize) the form data into jQuery String
+    const serData = $(this).serialize();
+
+    //jQuery AJAX Post Request (xhr)
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: serData,       //serialized data sent to server
+    })
+  });
 
   //Create new tweet elements
   const createTweetElement = function(tweetObj) {
@@ -12,7 +27,7 @@ $(document).ready(function() {
     const date = tweetObj.created_at;
     
     //Create article element with class name of 'tweets'
-    const $tweet = $(`<article class="tweets">
+    let $tweet = $(`<article class="tweets">
                         <header>
                           <section class="user">
                             <img src="${userData.avatars}" alt="Avatar">
@@ -30,9 +45,11 @@ $(document).ready(function() {
                           </aside>
                         </footer>
                       </article>`);
+
     return $tweet;
   };
   
+  //Calls createTweetElement for each tweet and takes return value and appends it to the tweets container
   const renderTweets = function(tweetObjArr) {
     for(const element of tweetObjArr) {
       //Tweet Data returned by the function
@@ -43,6 +60,7 @@ $(document).ready(function() {
     }
   }
 
+  //(Temp) Hard coded data (Taken from initial-tweets.json)
   const data = [
     {
       "user": {
