@@ -64,18 +64,10 @@
   color: darkblue;
 }
 
-/* .footer-icons i:hover{
+.footer-icons i:hover{
   color: darkgoldenrod;
-} */
-
-.highlight {
-  color:darkgoldenrod;
 }
 
-/* .tweets:hover {
-  box-shadow: 6px 6px 6px steelblue;
-} */
-
-.shadow {
+.tweets:hover {
   box-shadow: 6px 6px 6px steelblue;
 }
