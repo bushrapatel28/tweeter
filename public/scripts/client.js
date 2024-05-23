@@ -25,6 +25,7 @@ $(document).ready(function () {
         url: "/tweets",
         data: serData,       //serialized data sent to server
       });
+      event.target.reset();     //Clear form after successful submit
     }
   });
 
