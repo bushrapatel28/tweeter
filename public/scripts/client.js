@@ -11,7 +11,7 @@ $(document).ready(function () {
     event.preventDefault();
     const tweetMessage = $(this).children("#tweet-text").val().trim();     //trim() to remove any whitespaces before or after the text in the textarear
     
-    if(!isTweetValid(tweetMessage)) {
+    if(isTweetValid(tweetMessage)) {
       //Convert (serialize) the form data into jQuery String
       const serData = $(this).serialize();
       //jQuery AJAX Post Request (xhr); same as $.post("/tweets", serData);
@@ -31,14 +31,14 @@ $(document).ready(function () {
   const isTweetValid = function(tweetText) {
     if (tweetText === "" || tweetText === null) {     //Validation for empty or null text value
       alert("Tweet content Cannot be Empty!");
-      return true;
+      return false;
     }
     
     if (tweetText.length > 140) {              //Validation for max text length
       alert("Tweet content is too long!");
-      return true;
+      return false;
     }
-    return false;
+    return true;
   }
 
   //Create new tweet elements
