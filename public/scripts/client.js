@@ -76,7 +76,7 @@ $(document).ready(function () {
       const $tweet = createTweetElement(element);
 
       //Add it to the page so we can make sure it's got all the right elements, classes, etc.
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
   }
 
