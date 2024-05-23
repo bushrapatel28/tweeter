@@ -40,9 +40,8 @@
 
 .tweets header aside {
   padding-top: 15px;
-  opacity: 0.4;
   font-size: large;
-  color: white;
+  color: lightgray;
 }
 
 .tweet-content {
