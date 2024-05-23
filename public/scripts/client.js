@@ -9,17 +9,23 @@ $(document).ready(function () {
   $('form').on('submit', function(event) {
     //Prevent the default form submission behaviour
     event.preventDefault();
-    //Convert (serialize) the form data into jQuery String
-    const serData = $(this).serialize();
-
-    //jQuery AJAX Post Request (xhr); same as $.post("/tweets", serData);
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: serData,       //serialized data sent to server
-    });
-    // //Load the tweet as soon as it is posted
-    // loadTweets();
+    const tweetText = $(this).children("#tweet-text").val().trim();     //trim() to remove any whitespaces before or after the text in the textarear
+    
+    if (tweetText === "" || tweetText === null) {     //Validation for empty or null text value
+      alert("Tweet content Cannot be Empty!");
+    } else if (tweetText.length > 140) {             //Validation for max text length
+      alert("Tweet content is too long!");
+    } else {
+      //Convert (serialize) the form data into jQuery String
+      const serData = $(this).serialize();
+      console.log(serData);
+      //jQuery AJAX Post Request (xhr); same as $.post("/tweets", serData);
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: serData,       //serialized data sent to server
+      });
+    }
   });
 
   //Create new tweet elements
