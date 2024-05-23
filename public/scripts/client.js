@@ -89,6 +89,8 @@ $(document).ready(function () {
       dataType: 'json',
       //Success Callback to call renderTweets by passing the response from the AJAX request``
       success: function(response) {
+        //Clear the tweets-container to avoid duplicate contents
+        $('#tweets-container').empty();
         //Render the JSON data into the page
         renderTweets(response);
       }
