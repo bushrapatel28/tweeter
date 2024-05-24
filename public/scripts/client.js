@@ -46,26 +46,22 @@ $(document).ready(function () {
     const userData = tweetObj.user;
     const tweetContent = tweetObj.content;
     const timeAgo = timeago.format(tweetObj.created_at);      //timeago.format() to display the time passed since a Tweet
+    
+    //Preventing XSS with Escaping (using .text())
+    let $tweet = $("<article class='tweets'>");           //Create article element with class tweets
+    let $section = $("<section class='user'>");           //Create section element with class user
+    let $aside = $("<aside>").text(userData.handle);      //Create aside element with text which has escaped unsafe characters from the untrusted text (userData.handle)                 
+    const img = $("<img alt='Avatars'>").attr('src', userData.avatars);       //Create img element and assign src attribute value which has escaped unsafe characters from the untrusted text (userData.avatars)          
+    
+    $section.append(img, $("<h3>").text(userData.name));              //Create h3 element with text which has escaped unsafe characters from the untrusted text (userData.name); then append img and h3 elements to the section element
+    const $header = $("<header>").append($section, $aside);           //Create header element and append section and aside elements to it
+    
+    $section = $("<section class='tweet-content'>").text(tweetContent.text);    //Create section element with class tweet-content then add text which has escaped unsafe characters from the untrusted text (tweetContent.text)
+    $aside = $("<aside class='footer-icons'>").append($("<i class='fa-solid fa-flag'>"), $("<i class='fa-solid fa-retweet'>"), $("<i class='fa-solid fa-heart'>"));       //Create aside element and append the i elements (footer icons) to it
+    const $footer = $("<footer>").append($("<time>").text(timeAgo), $aside);    //Create footer element and append time with text which has escaped unsafe characters from the untrusted text (timeAgo), and aside elements to it
+    
+    $tweet = $tweet.append($header).append($section).append($footer);           //Append all the chilren to the parent
 
-    //Create article element with class name of 'tweets'
-    const $tweet = $(`<article class="tweets">
-                        <header>
-                          <section class="user">
-                            <img src="${userData.avatars}" alt="Avatar">
-                            <h3>${userData.name}</h3>
-                          </section>
-                          <aside>${userData.handle}</aside>
-                        </header>
-                        <section class="tweet-content">${tweetContent.text}</section>
-                        <footer>
-                          <time>${timeAgo}</time>
-                          <aside class="footer-icons">
-                            <i class="fa-solid fa-flag"></i>
-                            <i class="fa-solid fa-retweet"></i>
-                            <i class="fa-solid fa-heart"></i>
-                          </aside>
-                        </footer>
-                      </article>`);
     return $tweet;
   };
 
