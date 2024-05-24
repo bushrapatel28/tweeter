@@ -14,7 +14,7 @@ $(document).ready(function () {
     const tweetMessage = $(this).children("#tweet-text").val().trim();     //trim() to remove any whitespaces before or after the text in the textarear
     
     //Hide the error upon submission and before validation
-    $(".error-message").slideUp(0);
+    $(".error-message").slideUp(10);
     
     if(isTweetValid(tweetMessage)) {
       //Convert (serialize) the form data into jQuery String
