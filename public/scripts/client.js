@@ -32,7 +32,7 @@ $(document).ready(function () {
     }
   });
 
-  //Validation checks
+  //Validation checks for empty and max chars exceeding text
   const isTweetValid = function(tweetText) {
     if (tweetText === "" || tweetText === null) {     //Validation for empty or null text value
       //Show the error for Invalid tweets with a slide down animation
