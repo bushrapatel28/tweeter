@@ -4,12 +4,17 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
+  //Hide the error upon form load
+  $(".error-message").hide(0);
 
   //Form 'submit' Event Handler
   $('form').on('submit', function(event) {
     //Prevent the default form submission behaviour
     event.preventDefault();
     const tweetMessage = $(this).children("#tweet-text").val().trim();     //trim() to remove any whitespaces before or after the text in the textarear
+    
+    //Hide the error upon submission and before validation
+    $(".error-message").slideUp(0);
     
     if(isTweetValid(tweetMessage)) {
       //Convert (serialize) the form data into jQuery String
@@ -30,14 +35,17 @@ $(document).ready(function () {
   //Validation checks
   const isTweetValid = function(tweetText) {
     if (tweetText === "" || tweetText === null) {     //Validation for empty or null text value
-      alert("Tweet content Cannot be Empty!");
+      //Show the error for Invalid tweets with a slide down animation
+      $(".error-message").text("⚠️ Please give words to your Tweet. Tweet content cannot be Empty!").slideDown(500);
       return false;
     }
-    
     if (tweetText.length > 140) {              //Validation for max text length
-      alert("Tweet content is too long!");
+      //Show the error for Invalid tweets with a slide down animation
+      $(".error-message").text("⚠️ Too long. Please be more concise and limit your Tweet to 140 chars.").slideDown(500);
       return false;
     }
+    //Hide the error for Valid tweets
+    //$(".error-message").hide(0);
     return true;
   }
 
