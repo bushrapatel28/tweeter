@@ -5,7 +5,7 @@
  */
 $(document).ready(function () {
   //Hide the error upon form load
-  $(".error-message").hide(0);
+  $(".error-message").hide();
 
   //Form 'submit' Event Handler
   $('form').on('submit', function(event) {
@@ -44,8 +44,6 @@ $(document).ready(function () {
       $(".error-message").text("⚠️ Too long. Please be more concise and limit your Tweet to 140 chars.").slideDown(500);
       return false;
     }
-    //Hide the error for Valid tweets
-    //$(".error-message").hide(0);
     return true;
   }
 
