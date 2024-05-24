@@ -39,3 +39,15 @@ button {
   background-color: darkblue;
   color: white;
 }
+
+.error-message {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: thin solid darkred;
+  background-color: firebrick;
+  font-family: sans-serif;
+  font-size: small;
+  font-weight: bold;
+  color: whitesmoke;
+}
