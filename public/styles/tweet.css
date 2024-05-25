@@ -41,7 +41,7 @@
 .tweets header aside {
   padding-top: 15px;
   font-size: large;
-  color: lightgray;
+  color:aliceblue;
 }
 
 .tweet-content {
@@ -69,4 +69,11 @@
 
 .tweets:hover {
   box-shadow: 6px 6px 6px steelblue;
+}
+
+@media only screen and (min-width: 768px) {
+  .tweets header {
+    padding: 0px;
+    margin: 0px;
+  }
 }
