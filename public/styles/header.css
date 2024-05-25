@@ -7,8 +7,8 @@ body header {
   padding-top: 80px;
   height: 400px;
   width: 100%;
-  background-color: lightskyblue;
-  background-image: url("../images/fresh-snow.png");
+  background-color:rgb(109, 179, 241);
+  background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
 }
 
 .my-name {
@@ -18,4 +18,14 @@ body header {
   height: 30px;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  body header {
+    height: 350px;
+    width: 80%;
+    padding-top: 0px;
+    margin: 50px;
+    margin-top: 150px;
+  }
 }
