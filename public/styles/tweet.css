@@ -1,3 +1,4 @@
+/* Styles for Tweets in the tweets-container */
 .tweets {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -7,6 +8,7 @@
   border-color: black;
 }
 
+/* Styles for header in the tweets */
 .tweets header {
   display: flex;
   flex-direction: row;
@@ -20,6 +22,7 @@
   background-image: none;
 }
 
+/* Styles for User's Avatars and Names */
 .user {
   display: flex;
   justify-content: space-between;
@@ -38,12 +41,14 @@
   font-size: large;
 }
 
+/* Styles for User's Handle */
 .tweets header aside {
   padding-top: 15px;
   font-size: large;
   color:aliceblue;
 }
 
+/* Styles for the Tweet Content in tweets */
 .tweet-content {
   padding: 10px;
   border-bottom-width: medium;
@@ -52,6 +57,7 @@
   font-size: large;
 }
 
+/* Styles for footer in tweets */
 .tweets footer {
   padding: 10px;
   display: flex;
@@ -59,19 +65,27 @@
   font-size: small;
 }
 
+/* Styles for footer icons */
 .footer-icons {
   color: darkblue;
 }
 
+.footer-icons .fa-solid {
+  margin: 2px;
+}
+
+/* Styles for footer icons upon Hover */
 .footer-icons i:hover{
   color: darkgoldenrod;
 }
 
+/* Styles for tweets upon Hover */
 .tweets:hover {
   box-shadow: 6px 6px 6px steelblue;
 }
 
-@media only screen and (min-width: 768px) {
+/* Media query to change tweets header styling when screen width is 1024px or more */
+@media only screen and (min-width: 1024px) {
   .tweets header {
     padding: 0px;
     margin: 0px;
