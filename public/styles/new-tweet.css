@@ -1,45 +1,62 @@
+/* Styles for form */
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+/* Font Size for COMPOSE TWEET text in new-tweet */
 .new-tweet h2 {
   font-size: larger;
 }
 
+/* Font Size for WHAT ARE YOU HUMMING ABOUT text in form */
 form label {
   font-size: large;
 }
 
+/* Styles for textarea */
 #tweet-text {
+  padding: 5px;
   resize: none;
   height: auto;
   outline: none;
   border: none;
-  background-color: inherit;
   border-bottom: thick solid black;
+  background-color: inherit;
   font-size: large;
 }
 
+/* Styles for Button and Counter */
 .button-counter {
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  font-family: "Bungee", sans-serif;
+  font-family: "Bungee";
   font-size: large;
 }
 
+/* Styles for Negative Counter */
 .negative {
   color: red;
 }
 
+/* Styles for Button */
 button {
   background-color: darkblue;
   color: white;
 }
 
+/* Styles for Button upon Focus */
+button:focus {
+  border-style: solid;
+  border-color:dodgerblue;
+  border-width: 4px;
+  border-radius: 2px;
+}
+
+/* Styles for Error Messages related to textarea */
 .error-message {
   display: none;
   position: relative;
