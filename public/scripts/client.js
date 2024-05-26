@@ -3,7 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function () {
+$(document).ready(function() {
   //Hide the error upon form load
   $(".error-message").hide();
 
@@ -11,7 +11,7 @@ $(document).ready(function () {
   $('form').on('submit', function(event) {
     //Prevent the default form submission behaviour
     event.preventDefault();
-    const tweetMessage = $(this).children("#tweet-text").val().trim();     //trim() to remove any whitespaces before or after the text in the textarear
+    const tweetMessage = $(this).children("#tweet-text").val().trim();     //trim() to remove any whitespaces before or after the text in the textarea
     
     //Hide the error upon submission and before validation
     $(".error-message").slideUp(10);
@@ -45,7 +45,7 @@ $(document).ready(function () {
       return false;
     }
     return true;
-  }
+  };
 
   //Create new tweet elements
   const createTweetElement = function(tweetObj) {
@@ -56,8 +56,8 @@ $(document).ready(function () {
     //Preventing XSS with Escaping (using .text())
     let $tweet = $("<article class='tweets'>");           //Create article element with class tweets
     let $section = $("<section class='user'>");           //Create section element with class user
-    let $aside = $("<aside>").text(userData.handle);      //Create aside element with text which has escaped unsafe characters from the untrusted text (userData.handle)                 
-    const img = $("<img alt='Avatars'>").attr('src', userData.avatars);       //Create img element and assign src attribute value which has escaped unsafe characters from the untrusted text (userData.avatars)          
+    let $aside = $("<aside>").text(userData.handle);      //Create aside element with text which has escaped unsafe characters from the untrusted text (userData.handle)
+    const img = $("<img alt='Avatars'>").attr('src', userData.avatars);       //Create img element and assign src attribute value which has escaped unsafe characters from the untrusted text (userData.avatars)
     
     $section.append(img, $("<h3>").text(userData.name));              //Create h3 element with text which has escaped unsafe characters from the untrusted text (userData.name); then append img and h3 elements to the section element
     const $header = $("<header>").append($section, $aside);           //Create header element and append section and aside elements to it
@@ -71,33 +71,33 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  //Calls createTweetElement for each tweet and takes its return value then appends the value to the tweets container
+  //Call createTweetElement for each tweet and take its return value then prepend the value to the tweets container
   const renderTweets = function(tweetObjArr) {
     for (const element of tweetObjArr) {
       //Tweet Data returned by the function
       const $tweet = createTweetElement(element);
 
-      //Add it to the page so we can make sure it's got all the right elements, classes, etc.
+      //Add Tweets to the page
       $('#tweets-container').prepend($tweet);
     }
-  }
+  };
 
-  //Makes a jQuery Ajax Get request to load the tweets as JSON
+  //Make a jQuery Ajax Get request to load the tweets as JSON
   const loadTweets = function() {
     //jQuery AJAX Get Request (xhr); same as $.get("/tweets", function(response) { renderTweets(response); });
     $.ajax({
       url: '/tweets',
       type: 'GET',
       dataType: 'json',
-      //Success Callback to call renderTweets by passing the response from the AJAX request``
+      //Success Callback to call renderTweets by passing the response from the AJAX request
       success: function(response) {
         //Clear the tweets-container to avoid duplicate contents
         $('#tweets-container').empty();
-        //Render the JSON data into the page
+        //Render the JSON data into the page using renderTweets function
         renderTweets(response);
       }
-    })
-  }
+    });
+  };
   //Load tweets upon page load
   loadTweets();
 });
