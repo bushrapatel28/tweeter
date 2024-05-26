@@ -1,29 +1,30 @@
+/* Styles for the header (height of the visible part is 400px and content is center aligned) */
 body header {
+  box-sizing: content-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-sizing: content-box;
-  padding-top: 80px;
+  padding-top: 120px;
   height: 400px;
   width: 100%;
   background-color:rgb(109, 179, 241);
   background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
 }
 
-.my-name {
-  display: flex;
-  box-sizing: border-box;
-  margin-top: -20px;
-  height: 30px;
-  justify-content: center;
-  align-items: center;
+/* Remove margins */
+.avatar img {
+  margin: auto;
 }
 
-@media only screen and (min-width: 768px) {
+/* Remove margins */
+.my-name h2 {
+  margin: auto;
+}
+
+/* Media query to change header styling when screen width is 1024px or more */
+@media only screen and (min-width: 1024px) {
   body header {
-    height: 350px;
-    width: 80%;
     padding-top: 0px;
     margin: 50px;
     margin-top: 150px;
