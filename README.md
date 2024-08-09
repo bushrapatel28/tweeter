@@ -5,13 +5,21 @@ Tweeter is a simple, single-page AJAX-based Twitter clone that uses jQuery, HTML
 ## Final Product
 
 !["screenshot of page layout - 1024px wide screen"](https://github.com/bushrapatel28/tweeter/blob/main/docs/Page%20Layout%20in%201024px%20wide%20screen.png)
+
 !["screenshot of page layout - less than 1024px wide screen"](https://github.com/bushrapatel28/tweeter/blob/main/docs/Page%20Layout%20in%20less%20than%201024px%20wide%20screen.png)
+
 !["screenshot of fixed nav bar at the top of the page"](https://github.com/bushrapatel28/tweeter/blob/main/docs/Navbar%20fixed%20to%20the%20top%20of%20the%20page.png)
+
 !["screenshot of counter value change"](https://github.com/bushrapatel28/tweeter/blob/main/docs/Counter%20value%20change%20when%20text%20added%20to%20the%20text-area.png)
+
 !["screenshot of newer tweets show at the top"](https://github.com/bushrapatel28/tweeter/blob/main/docs/Newer%20tweets%20show%20at%20the%20top.png)
+
 !["screenshot of tweet icons highlight upon hover"](https://github.com/bushrapatel28/tweeter/blob/main/docs/Tweet%20icons%20highlight%20upon%20hover.png)
+
 !["screenshot of error when tweet content is empty"](https://github.com/bushrapatel28/tweeter/blob/main/docs/Error%20on%20submit%20when%20tweet%20content%20is%20empty.png)
+
 !["screenshot of error when tweet exceeds character limit"](https://github.com/bushrapatel28/tweeter/blob/main/docs/Error%20when%20tweet%20exceeds%20character%20limit.png)
+
 !["screenshot of error disappears upon successful tweet post"](https://github.com/bushrapatel28/tweeter/blob/main/docs/Error%20disappears%20upon%20successful%20tweet%20post.png)
 
 
